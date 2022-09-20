@@ -42,49 +42,50 @@ function paperRequirements(firstBook, secondBook, thirdBook) {
 
 
 // ৪. একটা ফাংশন লিখবে। এই ফাংশনের নাম হবে bestFriend তারপর সেই ফাংশনে ইনপুট প্যারামিটার হিসেবে একটা array নিবে। সেই array এর মধ্যে তোমার সব ফ্রেন্ডের নাম থাকবে। এখন তোমার কাজ হচ্ছে যে ফ্রেন্ড এর নাম সবচেয়ে বড় সেই ফ্রেন্ড এর নাম রিটার্ন করে দেয়া। এই ক্ষেত্রে তুমি নামটা অর্থাৎ ফ্রেন্ডের নাম (স্ট্রিং) রিটার্ন করতে হবে। 
-let friends = ['abid','maruf','mithu','siyam','santo','sayed', 'hafiz', 'al amin','sabbir', 'mostofa kamal', 'abu hena roni', 'hasan mahmud shohel'];
+let friends = ['abid', 'maruf', 'mithu', 'siyam', 'santo', 'sayed', 'hafiz', 'al amin', 'sabbir', 'mostofa kamal', 'abu hena roni', 'hasan mahmud shohel'];
 function bestFriend(friends) {
     let longest = '';
     for (let i = 0; i < friends.length; i++) {
-       const index = i;
-       const element = friends[index]
+        const index = i;
+        const element = friends[index]
         if (element.length > longest.length) {
-            longest=element // longest kono array noy je tumi sekane push korbe.
+            longest = element // longest kono array noy je tumi sekane push korbe.
         }
-    } 
+    }
     return longest
 }
-const tallestFriendName = bestFriend(friends)
-console.log(tallestFriendName);
-
-
-
-
-
+// const tallestFriendName = bestFriend(friends)
+// console.log(tallestFriendName);
 
 
 
 
 
 // ৫. এইটা একটু ট্রিকি হতে পারে। একটা array এর মধ্যে অনেকগুলা সংখ্যা থাকবে। তোমার কাজ হচ্ছে সংখ্যা গুলা একটার পর একটা করে চেক করা। এবং সংখ্যা গুলা যদি পজিটিভ সংখ্যা হয়। অর্থাৎ শূন্য বা শূন্যের চাইতে বড় হয় তাহলে সেগুলাকে কোন একটা array এর মধ্যে রাখবে। আর যদি নেগেটিভ সংখ্যা হয়। তাহলে লুপটা স্টপ করে দিবে। এবং লুপ বন্ধ করার আগ পর্যন্ত যতগুলা পজিটিভ সংখ্যা পাওয়া গেছে। সেগুলা রিটার্ন করে দিবে। 
-let numbers = [12, 23, 45, 0, -21, -32, 65, 78, 89, -12, 21, 21, 32, 65, 54, 98, 87, -65, -32,-100];
+let numbers = [12, 23, 45, 0, 65, 78, 89, -21, -32, -12, 21, 21, 32,-100];
 function positiveNumberOfAnArray(numbers) {
     let positiveNumbers = [];
     for (let i = 0; i < numbers.length; i++) {
         const index = i;
         const element = numbers[index];
-        if (element >= 0) {
+        if (element <= -1) {
+            break;
+        } else if (element >= 0) {
             positiveNumbers.push(element)
         }
+        /** Wrong Method !!!
+        if (element >= 0) {
+            if (element <= -1) {
+                break;
+            }
+            positiveNumbers.push(element)
+        }
+         */
     }
     return positiveNumbers
 }
-// var allPositiveNumbers = positiveNumberOfAnArray(numbers)
-// console.log('all Positive Numbers of an Array :', allPositiveNumbers);
-
-
-
-
+var allPositiveNumbers = positiveNumberOfAnArray(numbers)
+console.log('all Positive Numbers of an Array :', allPositiveNumbers);
 
 
 
