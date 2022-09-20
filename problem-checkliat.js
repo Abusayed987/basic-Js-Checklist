@@ -73,7 +73,7 @@ function positiveNumberOfAnArray(numbers) {
         } else if (element >= 0) {
             positiveNumbers.push(element)
         }
-        /** Wrong Method !!!
+        /** Wrong Method
         if (element >= 0) {
             if (element <= -1) {
                 break;
